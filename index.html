@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Verge Estudio WC</title>
+
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Lora&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="header-top">
+    <img src="logo.png" alt="Logo Verge Estudio WC" class="logo" />
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#quienes-somos">¿Quienes somos?</a></li>
+        <li><a href="#que-ofrecemos">¿Que ofrecemos?</a></li>
+        <li><a href="#instalacion">Instalaciones</a></li>
+        <li><a href="#contacto">¿Buscas trabajo?</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+<section class="banner">
+  <img src="banner.png" alt="Banner Verge Estudio WC" class="banner-img">
+  <div class="banner-text">
+    Verge Estudio WC
+    <p>Empatía - Seguridad - Respeto - Privacidad</p>
+  </div>
+</section>
+
+<section id="quienes-somos" class="hero">
+  <h1>¿Quienes somos?</h1>
+</section>
+
+<section class="weare-container">
+  <div class="weare-img">
+    <img src="weare.jpg" alt="Quiénes somos">
+  </div>
+  <div class="weare">
+    <ul>
+      <li>
+        En VERGE ESTUDIO WC creemos que el éxito nace en un entorno seguro, profesional y lleno de oportunidades.
+        Somos un equipo comprometido en brindarte todas las herramientas, la capacitación y el apoyo que necesitas para desarrollarte en la industria del modelaje webcam, siempre priorizando tu bienestar y crecimiento personal.
+        <br><br>
+        Aquí no solo encontrarás un lugar de trabajo, sino una comunidad donde se respeta tu tiempo, tu talento y tus metas. Nuestro propósito es que alcances tu máximo potencial, generes excelentes ingresos y vivas una experiencia positiva, respaldada por un equipo que te acompaña en cada paso.
+        <br><br>
+        Más que un estudio, somos tu aliado en el camino hacia tu éxito.
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="que-ofrecemos" class="hero">
+  <h1>¿Que ofrecemos?</h1>
+</section>
+
+<section class="benefits-container">
+  <div class="benefits">
+    <img src="ofrecemos.png" alt="Que ofrecemos" class="clickable-img">
+  </div>
+  <div class="benefits-img">
+    <img src="bene.jpg" alt="Imagen lateral">
+  </div>
+</section>
+
+<section id="instalacion" class="hero">
+  <h1>Nuestras instalaciones</h1>
+</section>
+
+<section id="instalaciones" class="instalaciones">
+  <div class="instalaciones-box">
+    <p>Conoce los espacios donde trabajamos con profesionalismo y comodidad.</p>
+    <div class="instalaciones-imgs">
+      <img src="instalacion1.jpg" alt="Instalación 1" class="clickable-img">
+      <img src="instalacion2.jpg" alt="Instalación 2" class="clickable-img">
+      <img src="instalacion3.jpg" alt="Instalación 3" class="clickable-img">
+      <img src="instalacion4.jpg" alt="Instalación 4" class="clickable-img">
+      <img src="instalacion5.jpg" alt="Instalación 5" class="clickable-img">
+      <img src="instalacion6.jpg" alt="Instalación 6" class="clickable-img">
+      <img src="instalacion7.jpg" alt="Instalación 7" class="clickable-img">
+      <img src="instalacion8.jpg" alt="Instalación 8" class="clickable-img">
+      <img src="instalacion9.jpg" alt="Instalación 9" class="clickable-img">
+      <img src="instalacion10.jpg" alt="Instalación 10" class="clickable-img">
+    </div>
+  </div>
+</section>
+
+<!-- Modal para imagen ampliada -->
+<div id="modal" class="modal">
+  <span class="close" id="closeBtn">&times;</span>
+  <img class="modal-content" id="modal-img" alt="Imagen Ampliada">
+</div>
+
+<section id="inicio" class="hero">
+  <h1>¿Quieres trabajar con nosotros?</h1>
+  <div class="video-container">
+    <video controls>
+      <source src="VergeEstudio.mp4" type="video/mp4" />
+      Tu navegador no soporta el video.
+    </video>
+  </div>
+</section>
+
+<section id="contacto" class="contacto">
+  <a class="whatsapp-btn" href="https://wa.me/573213094882" target="_blank">
+    Contactar por WhatsApp
+  </a>
+  <p><strong>Instagram:</strong> @vergeestudiowc</p>
+  <p><strong>WhatsApp:</strong> 321 3094882</p>
+</section>
+
+</main>
+
+<footer class="container">
+  <p>“Aquí crecerás como persona y profesional. ¡Anímate!”</p>
+</footer>
+
+<script>
+  window.addEventListener("scroll", function() {
+    const header = document.querySelector("header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  });
+
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  const closeBtn = document.getElementById("closeBtn");
+
+  document.querySelectorAll(".clickable-img").forEach(img => {
+    img.addEventListener("click", () => {
+      modal.style.display = "flex";
+      modalImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
+</body>
+</html>
